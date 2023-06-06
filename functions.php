@@ -50,7 +50,7 @@ function connectDB(){
     $pdo = connectDB();
     $request = $pdo->prepare('INSERT INTO books (id_user, title, content) VALUES (:id_user, :title, :content)');
     $request->execute([
-        "id_user" => 1,
+        "id_user" => 2,
         "title" => $_POST['title'],
         "content" => $_POST['contentBook'],
     ]);
