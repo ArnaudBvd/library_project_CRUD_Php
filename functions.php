@@ -50,9 +50,19 @@ function addBook()
     $pdo = connectDB();
     $request = $pdo->prepare('INSERT INTO books (id_user, title, content) VALUES (:id_user, :title, :content)');
     $request->execute([
-        "id_user" => 2,
+        "id_user" => 1,
         "title" => $_POST['title'],
         "content" => $_POST['contentBook'],
     ]);
+    return $request->fetchAll();
+}
+
+// SUPPRIMER UN LIVRE
+function deleteBook()
+{
+    $collect = $_POST['title'];
+    $pdo = connectDB();
+    $request = $pdo->prepare("DELETE FROM books WHERE title = $collect");
+    $request->execute();
     return $request->fetchAll();
 }

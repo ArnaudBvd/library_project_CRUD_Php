@@ -25,6 +25,11 @@ $books = getAllBooks();
     </form>
 </div>
 
+<div class="my-5 d-flex justify-content-center">
+    <form action="deleteBookForm.php" method="">
+        <input type="submit" value="SUPPRIMER UN LIVRE" id="btn-delete-book">
+    </form>
+</div>
 
 <?php
 include("parts/footer.php");

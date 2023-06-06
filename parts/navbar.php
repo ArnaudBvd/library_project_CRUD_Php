@@ -8,12 +8,12 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="book-detail.php">Book Detail</a>
-                </li>
+                </li>                
                 <li class="nav-item">
                     <a class="nav-link" href="addBookForm.php">Add Book</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="deleteBookForm.php">Delete Book</a>
                 </li>
             </ul>
         </div>

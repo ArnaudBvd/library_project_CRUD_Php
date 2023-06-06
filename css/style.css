@@ -6,12 +6,28 @@
     padding: 10px 20px;
 }
 
+#btn-delete-book {
+    background-color: #e0115f;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
 a {
     text-decoration: none;
 }
 
 #btn-validate {
     background-color: #01d758;
+    border: none;
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 8px;
+}
+
+#btn-delete {
+    background-color: #e0115f;
     border: none;
     color: #fff;
     padding: 5px 20px;
