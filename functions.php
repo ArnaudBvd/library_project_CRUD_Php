@@ -74,8 +74,16 @@ function deleteBook()
 }
 
 // MODIFIER UN LIVRE
-// function updateBook()
-// {
-//     $pdo = connectDB();
-//     $request = 
-// }
+function updateBook()
+{
+    $collect_id = $_GET['id'];
+    $pdo = connectDB();
+    $request = $pdo->prepare("UPDATE books SET id_user = :id_user, title = :title, content = :content WHERE book_id = $collect_id");
+    $request->execute([
+        "id_user" =>1,
+        "title" => $_POST['title'],
+        "content" => $_POST['content'],
+    ]);
+    header('Location: index.php');
+    return $request->fetchAll();
+}

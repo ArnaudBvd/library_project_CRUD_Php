@@ -1,9 +1,13 @@
 <?php
 include("parts/header.php");
+include('functions.php');
+$save_title = $_GET['title'];
 ?>
 
 
 <h2 class="text-center mb-5 text-primary fst-italic">UPDATE BOOK</h2>
+
+<p class="text-center text-primary fs-3 mb-5">Attention ! vous vous apprêtez à modifier le livre : <?php echo $save_title ?> </p>
 
 <div class="d-flex justify-content-center">
     <form action="" method="post">
@@ -12,7 +16,7 @@ include("parts/header.php");
         <input type="text" name="title">
 
         <label for="title" class="mx-3">Contenu :</label>
-        <input type="text" name="title">
+        <input type="text" name="content">
 
         <input type="submit" value="MODIFIER" class="mx-3" id="btn-update">
     </form>
@@ -24,5 +28,8 @@ include("parts/header.php");
 </div>
 
 <?php
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    updateBook();
+}
 include("parts/footer.php");
 ?>
