@@ -11,13 +11,15 @@ $save_title = $_GET['title'];
 
 <p class="text-center text-danger fs-3">Pour supprimer ce livre, veuillez recopier le titre dans le champ de saisie</p>
 
-<form action="" method="post" class="my-5">
+<div class="d-flex justify-content-center">
+    <form action="" method="post" class="my-5">
 
-    <label for="title" class="mx-3">Titre du livre :</label>
-    <input type="text" name="title">
+        <label for="title" class="mx-3">Titre du livre :</label>
+        <input type="text" name="title">
 
-    <input type="submit" value="SUPPRIMER" class="mx-3" id="btn-delete">
-</form>
+        <input type="submit" value="SUPPRIMER" class="mx-3" id="btn-delete">
+    </form>
+</div>
 
 <div class="my-5 d-flex justify-content-center flex-column align-items-center">
     <p class="text-success text-uppercase">Home</p>
@@ -26,12 +28,11 @@ $save_title = $_GET['title'];
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
-    if($save_title == $_POST['title']){
-    deleteBook();
-    }else {
-        // echo ('Fuck');
-        header('Location: recup.php');
+    if ($save_title == $_POST['title']) {
+        deleteBook();
+    } else {
+        header('Location: error.php');
     }
-} 
+}
 include("parts/footer.php");
 ?>

@@ -29,22 +29,6 @@ td{
     padding: 10px 20px;
 }
 
-#btn-edit-book {
-    background-color: #0131B4;
-    border: none;
-    color: #fff;
-    border-radius: 8px;
-    padding: 10px 20px;
-}
-
-#btn-delete-book {
-    background-color: #e0115f;
-    border: none;
-    color: #fff;
-    border-radius: 8px;
-    padding: 10px 20px;
-}
-
 a {
     text-decoration: none;
 }
@@ -66,7 +50,7 @@ a {
 }
 
 #btn-delete {
-    background-color: #e0115f;
+    background-color: #ff000a;
     border: none;
     color: #fff;
     padding: 5px 20px;
