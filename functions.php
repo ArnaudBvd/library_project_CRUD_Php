@@ -28,7 +28,7 @@ function connectDB()
 function getAllBooks()
 {
     $pdo = connectDB();
-    $request = $pdo->prepare('SELECT * FROM books');
+    $request = $pdo->prepare('SELECT * FROM books WHERE id_user = 1');
     $request->execute();
     return $request->fetchAll();
 }

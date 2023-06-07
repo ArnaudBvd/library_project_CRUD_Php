@@ -11,10 +11,7 @@
                 </li>                
                 <li class="nav-item">
                     <a class="nav-link" href="addBookForm.php">Add Book</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="updateBookForm.php">Edit Book</a>
-                </li>                
+                </li>                               
             </ul>
         </div>
     </div>

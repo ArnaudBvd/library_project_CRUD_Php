@@ -1,29 +1,37 @@
 <?php
 include("parts/header.php");
 include("functions.php");
-$bookDetails = getDetailBook();
+$save_title = $_GET['title'];
 ?>
 
-<h2 class="text-center mb-5 text-uppercase">Delete Book</h2>
-
-<?php foreach($bookDetails as $bookDetail): ?>
-<p class="text-center text-danger fs-3">Attention ! vous allez supprimer le livre : <?php echo $bookDetail['title'] ?> </p>
-<?php endforeach; ?>
+<h2 class="text-center mb-5 text-uppercase text-danger fst-italic">Delete Book</h2>
 
 
-<form action="" method="post">
+<p class="text-center text-danger fs-3">Attention ! vous allez supprimer le livre : <?php echo $save_title ?> </p>
+
+<p class="text-center text-danger fs-3">Pour supprimer ce livre, veuillez recopier le titre dans le champ de saisie</p>
+
+<form action="" method="post" class="my-5">
 
     <label for="title" class="mx-3">Titre du livre :</label>
     <input type="text" name="title">
-    <input type="hidden" name="<?php echo $bookDetail['book_id'] ?>">
 
     <input type="submit" value="SUPPRIMER" class="mx-3" id="btn-delete">
 </form>
 
+<div class="my-5 d-flex justify-content-center flex-column align-items-center">
+    <p class="text-success text-uppercase">Home</p>
+    <a href="index.php"><img src="uploads/return.png" width="40px" alt=""></a>
+</div>
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
+    if($save_title == $_POST['title']){
     deleteBook();
+    }else {
+        // echo ('Fuck');
+        header('Location: recup.php');
+    }
 } 
 include("parts/footer.php");
 ?>

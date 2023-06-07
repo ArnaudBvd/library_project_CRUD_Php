@@ -26,8 +26,8 @@ $books = getAllBooks();
             <tr>
                 <td class="fs-5"><?php echo $book['title'] ?></td>
                 <td><a href="book-detail.php?id=<?php echo $book['book_id'] ?>"><img src="uploads/loupe.png" width="30px" alt=""></a></td>
-                <td><a href=""><img src="uploads/edit.png" alt="" width="30px"></a></td>
-                <td><a href="deleteBookForm.php?id=<?php echo $book['book_id'] ?>"><img src="uploads/delete.png" alt="" width="30px"></a></td>
+                <td><a href="updateBookForm.php?id=<?php echo $book['book_id'] ?>"><img src="uploads/edit.png" alt="" width="30px"></a></td>
+                <td><a href="deleteBookForm.php?id=<?php echo $book['book_id']?>&title=<?php echo $book['title'] ?>"><img src="uploads/delete.png" alt="" width="30px"></a></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
@@ -40,12 +40,6 @@ $books = getAllBooks();
         </tr>
     </tfoot>
 </table>
-
-<div class="my-5 d-flex justify-content-center">
-    <form action="updateBookForm.php" method="">
-        <input type="submit" value="MODIFIER UN LIVRE" id="btn-edit-book">
-    </form>
-</div>
 
 <?php
 include("parts/footer.php");
