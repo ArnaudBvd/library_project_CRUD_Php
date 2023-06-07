@@ -39,8 +39,10 @@ function getDetailBook()
 {
     $collect = (int) $_GET['id'];
     $pdo = connectDB();
-    $request = $pdo->prepare("SELECT * FROM books WHERE book_id = $collect");
-    $request->execute();
+    $request = $pdo->prepare("SELECT * FROM books WHERE book_id = :book_id");
+    $request->execute([
+        "book_id" => $collect,
+    ]);
     return $request->fetchAll();
 }
 
@@ -54,6 +56,7 @@ function addBook()
         "title" => $_POST['title'],
         "content" => $_POST['contentBook'],
     ]);
+    header('Location: index.php');
     return $request->fetchAll();
 }
 
@@ -62,7 +65,17 @@ function deleteBook()
 {
     $collect = $_POST['title'];
     $pdo = connectDB();
-    $request = $pdo->prepare("DELETE FROM books WHERE title = $collect");
-    $request->execute();
+    $request = $pdo->prepare("DELETE FROM books WHERE title = :title");
+    $request->execute([
+        "title" => $collect,
+    ]);
+    header('Location: index.php');
     return $request->fetchAll();
 }
+
+// MODIFIER UN LIVRE
+// function updateBook()
+// {
+//     $pdo = connectDB();
+//     $request = 
+// }

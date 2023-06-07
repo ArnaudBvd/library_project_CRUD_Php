@@ -26,6 +26,12 @@ $books = getAllBooks();
 </div>
 
 <div class="my-5 d-flex justify-content-center">
+    <form action="updateBookForm.php" method="">
+        <input type="submit" value="MODIFIER UN LIVRE" id="btn-edit-book">
+    </form>
+</div>
+
+<div class="my-5 d-flex justify-content-center">
     <form action="deleteBookForm.php" method="">
         <input type="submit" value="SUPPRIMER UN LIVRE" id="btn-delete-book">
     </form>
