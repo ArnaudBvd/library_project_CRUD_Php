@@ -4,36 +4,46 @@ include("functions.php");
 $books = getAllBooks();
 ?>
 
-<h2 class="text-center text-uppercase mb-4">All the books</h2>
+<h2 class="text-center text-uppercase mb-4 fst-italic">All the books</h2>
 
-<!-- Affiher les livres en BDD -->
-<div class="d-flex flex-wrap p-3">
-
-    <?php foreach ($books as $book) : ?>
-        <div class="col-3 my-4 d-flex flex-column">
-            <p class="text-center text-uppercase"><?php echo $book['title'] ?></p>
-            <div class="btn btn-primary w-40 mx-auto">
-                <a href="book-detail.php?id=<?php echo $book['book_id'] ?>" class="text-light px-3">DETAIL</a>
-            </div>
-        </div>
-    <?php endforeach; ?>
-</div>
-
-<div class="my-5 d-flex justify-content-center">
+<div class="mt-5 mb-3 ms-2 d-flex">
     <form action="addBookForm.php" method="">
-        <input type="submit" value="AJOUTER UN LIVRE" id="btn-add-book">
+        <input type="submit" value="+ ADD BOOK" id="btn-add-book">
     </form>
 </div>
+
+<table>
+    <thead class="bg-info">
+        <tr>
+            <th class="text-uppercase text-light fst-italic fs-4">Title</th>
+            <th class="text-uppercase text-light fst-italic fs-4">Detail</th>
+            <th class="text-uppercase text-light fst-italic fs-4">Edit</th>
+            <th class="text-uppercase text-light fst-italic fs-4">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($books as $book) : ?>
+            <tr>
+                <td class="fs-5"><?php echo $book['title'] ?></td>
+                <td><a href="book-detail.php?id=<?php echo $book['book_id'] ?>"><img src="uploads/loupe.png" width="30px" alt=""></a></td>
+                <td><a href=""><img src="uploads/edit.png" alt="" width="30px"></a></td>
+                <td><a href="deleteBookForm.php?id=<?php echo $book['book_id'] ?>"><img src="uploads/delete.png" alt="" width="30px"></a></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+    <tfoot class="bg-info">
+        <tr>
+            <td class="py-2 td_footer"></td>
+            <td class="py-2 td_footer"></td>
+            <td class="py-2 td_footer"></td>
+            <td class="py-2 td_footer"></td>
+        </tr>
+    </tfoot>
+</table>
 
 <div class="my-5 d-flex justify-content-center">
     <form action="updateBookForm.php" method="">
         <input type="submit" value="MODIFIER UN LIVRE" id="btn-edit-book">
-    </form>
-</div>
-
-<div class="my-5 d-flex justify-content-center">
-    <form action="deleteBookForm.php" method="">
-        <input type="submit" value="SUPPRIMER UN LIVRE" id="btn-delete-book">
     </form>
 </div>
 

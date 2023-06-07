@@ -1,3 +1,26 @@
+h2{
+    color: #01d758;
+}
+
+table {
+    width: 100%;
+}
+
+th{
+    text-align: center;
+    padding: 8px 0;
+}
+
+td{
+    text-align: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed grey;
+}
+
+.td_footer{
+    border: none;
+}
+
 #btn-add-book {
     background-color: #01d758;
     border: none;
